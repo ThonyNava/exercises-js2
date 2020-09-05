@@ -23,6 +23,19 @@ let house = {
 // - change the previous owners of "house" to ["Brian M.", "Fiona S."]
 // - change the last name of the current owner of "house" to "Montgomery"
 
+let newHouse = {
+  address: "51 Berkley Road",
+  previousOwners: ["Brian M.", "Fiona S."],
+  currentOwner: {
+    firstName: "Margaret",
+    lastName: "Montgomery",
+  },
+};
+
+house.address = newHouse.address;
+house.previousOwners = newHouse.previousOwners;
+house.currentOwner.lastName = newHouse.currentOwner.lastName;
+
 /*
   DO NOT EDIT ANYTHING BELOW THIS LINE
 */

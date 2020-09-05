@@ -6,18 +6,28 @@ A person named Alice is defined below.
 
 */
 
+function greet(name) {
+  return ` ${this.name}: Hello everybody.`;
+}
+
+function sayName(name) {
+  return `Hello, my name is ${this.name}.`;
+}
+
 let person = {
-    name: "Alice",
-    age: 25,
-  };
-  
-  /*
+  name: "Alice",
+  age: 25,
+  greet: greet,
+  sayName: sayName,
+};
+
+/*
   DO NOT EDIT ANYTHING BELOW THIS LINE
   */
-  
-  console.log(
-    `Expected result: Hello everybody. Actual result: ${person.greet()}`
-  );
-  console.log(
-    `Expected result: 'My name is Alice'. Actual result: ${person.sayName()}`
-  );
+
+console.log(
+  `Expected result: Hello everybody. Actual result: ${person.greet()}`
+);
+console.log(
+  `Expected result: 'My name is Alice'. Actual result: ${person.sayName()}`
+);

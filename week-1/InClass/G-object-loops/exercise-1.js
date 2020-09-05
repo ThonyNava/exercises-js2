@@ -3,11 +3,20 @@
 // Try to use both methods shown above to achieve this
 
 const studentGrades = {
-    tom: 20,
-    george: 17,
-    abdul: 19,
-  };
-  
-  // Prints
-  // TOM - 20
-  // ABDUL - 19
+  tom: 20,
+  george: 17,
+  abdul: 19,
+};
+
+// Looping through the array created from Object.keys
+const studentGradesKeys = Object.keys(studentGrades);
+
+studentGradesKeys.forEach((key) => {
+  if (studentGrades[key] > 18) {
+    console.log(`${key}: ${studentGrades[key]}`);
+  }
+});
+
+// Prints
+// TOM - 20
+// ABDUL - 19

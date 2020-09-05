@@ -17,3 +17,15 @@ var car = {
 
 */
 
+var superhero = {
+    courageous: 100*1,
+    strongMoralCodes: 100*.2,
+    tolerantToPain: 100*.7,
+    greatSenseOfResponsibility: 100*.1,
+    techKnowledge: 100*1,
+    fightingSpirit:100*1,
+    mentalStability: 100*.1,
+    knowledgeable: 100*.3
+};
+
+console.log(superhero);
