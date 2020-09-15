@@ -73,6 +73,12 @@ function checkingForms(inputs) {
   let ok = "✔";
   let empty = "*";
   inputs.forEach((obj) => {
+    let label = obj.childNodes[1].innerHTML.split("");
+    if (label[label.length - 1] === ok || label[label.length - 1] === empty) {
+      let labelArr = obj.childNodes[1].innerHTML.split("");
+      let label = labelArr.slice(0, labelArr.length - 1).join("");
+      obj.childNodes[1].innerHTML = label;
+    }
     switch (obj.childNodes[3].type) {
       case "email":
         if (
@@ -81,10 +87,12 @@ function checkingForms(inputs) {
         ) {
           if (obj.childNodes[1].innerHTML.split("").includes(ok) === false) {
             obj.childNodes[1].innerHTML += ` ${ok}`;
+            obj.childNodes[3].style.background = "rgba(50,205,50,.1)";
           }
         } else {
           if (obj.childNodes[1].innerHTML.split("").includes(empty) === false) {
             obj.childNodes[1].innerHTML += ` ${empty}`;
+            obj.childNodes[3].style.background = "rgba(220,20,60,.1)";
           }
         }
         break;
@@ -92,10 +100,12 @@ function checkingForms(inputs) {
         if (obj.childNodes[3].value.length > 0) {
           if (obj.childNodes[1].innerHTML.split("").includes(ok) === false) {
             obj.childNodes[1].innerHTML += ` ${ok}`;
+            obj.childNodes[3].style.background = "rgba(50,205,50,.1)";
           }
         } else {
           if (obj.childNodes[1].innerHTML.split("").includes(empty) === false) {
             obj.childNodes[1].innerHTML += ` ${empty}`;
+            obj.childNodes[3].style.background = "rgba(220,20,60,.1)";
           }
         }
         break;
@@ -103,10 +113,12 @@ function checkingForms(inputs) {
         if (obj.childNodes[3].value.length > 0) {
           if (obj.childNodes[1].innerHTML.split("").includes(ok) === false) {
             obj.childNodes[1].innerHTML += ` ${ok}`;
+            obj.childNodes[3].style.background = "rgba(50,205,50,.1)";
           }
         } else {
           if (obj.childNodes[1].innerHTML.split("").includes(empty) === false) {
             obj.childNodes[1].innerHTML += ` ${empty}`;
+            obj.childNodes[3].style.background = "rgba(220,20,60,.1)";
           }
         }
     }
